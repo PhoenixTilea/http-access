@@ -1,68 +1,15 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# HTTP Access
 
-## Available Scripts
+this is a simple web app meant for testing HTTP operations while developing. It is currently very basic, most useful to students learning HTTP and developing simple CRUD applications.
 
-In the project directory, you can run:
+Most importantly, it is accessible to screen reader users, unlike Postman or Hoppscotch.io (at the present time).
 
-### `npm start`
+## Usage
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Current, this application only supports the four main CRUD methods: GET, POST, PUT, and DELETE. It also operates purely with JSON (ContentType = application/json).
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+It's usage is simple enough: Choose your method from the dropdown, enter the url to your endpoint, and fill in the body and header fields with JSON notation as needed. Then, just click "Send" an and you'll receive the response status, body, and headers in the Response section.
 
-### `npm test`
+## But, why?
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Yes, I know Postman already does this and much, much more, and there is currently an open source version of Postman called Hoppschotch that is available on the web. However, I am a blind programmer and have been struggling through my education on the subject of HTTP and full stack JavaScript development because neither of these apps are very friendly to screen readers. Yes, I could try contributing to Hoppscotch, and I still might, but for now, making a very basic app was a much simpler solution for me.
