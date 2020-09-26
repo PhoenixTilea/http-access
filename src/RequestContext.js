@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import jsonFormat from "json-format";
 
 const RequestContext = React.createContext();
 
@@ -11,6 +12,7 @@ function RequestContextProvider(props) {
 	
 	const [response, setResponse] = useState({
 		status: "",
+		statusText: "",
 		headers: "",
 		body: ""
 	});
@@ -36,16 +38,27 @@ function RequestContextProvider(props) {
 			case "DELETE":
 				req = axios.delete(reqUrl, params);
 			break;
+			
+			default: throw new Error("Invalid request method");
 		}
 		req.then(res => updateResponse(res))
-			.catch(err => console.error(err));
+			.catch(err => {
+				if (err.response) {
+					updateResponse(err.response);
+				} else if (err.request) {
+					console.error(err.request);
+				} else {
+					console.error(err.message);
+				}
+			});
 	};
 	
 	const updateResponse = (res) => {
 		setResponse({
 			status: res.status,
-			headers: JSON.stringify(res.headers),
-			body: JSON.stringify(res.data)
+			statusText: response.statusText,
+			headers: jsonFormat(res.headers, {type: "space"}),
+			body: jsonFormat(res.data, {type: "space"})
 		});
 	};
 	

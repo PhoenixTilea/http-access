@@ -1,0 +1,7 @@
+#status {
+	display: block;
+	margin-bottom: 2em;
+}
+#status input {
+	width: 35vw;
+}

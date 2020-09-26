@@ -1,0 +1,8 @@
+#main-request {
+	display: grid;
+	grid-template-columns: 8em auto 8em;
+	margin-bottom: 2em;
+}
+#main-request select, #main-request input {
+	width: 95%;
+}
