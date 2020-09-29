@@ -4,7 +4,8 @@
   "description": "this is a simple web app meant for testing HTTP operations while developing. It is currently very basic, most useful to students learning HTTP and developing simple CRUD applications.",
   "main": "server.js",
   "scripts": {
-		"start" : "cd client && npm run build && cd .. && node server.js",
+		"start" : "node server.js",
+		"heroku-postbuild" : "npm install && cd client && npm install && npm run build",
 	"test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines" : {
