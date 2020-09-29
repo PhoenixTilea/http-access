@@ -14,17 +14,17 @@ export default function ResponseDisplay() {
 					type="text" 
 					value={response.status ? `${response.status} - ${response.statusText}` : ""} 
 					readOnly={true} 
-					aria-readOnly={true} 
+					aria-readonly={true} 
 					aria-live="polite" 
 				/>
 			</label>
 			<label className="block">
 				<h3>Response Body</h3>
-				<textarea value={response.body} spellCheck="false" readOnly aria-readOnly="true"></textarea>
+				<textarea value={response.body} spellCheck="false" readOnly aria-readonly="true"></textarea>
 			</label>
 			<label className="block">
 				<h3>Response Headers</h3>
-				<textarea value={response.headers} spellCheck="false" readOnly aria-readOnly="true"></textarea>
+				<textarea value={response.headers} spellCheck="false" readOnly aria-readonly="true"></textarea>
 			</label>
 		</div>
 	);

@@ -14,7 +14,7 @@ export default function App() {
 					<h1>HTTP Acess</h1>
 					<em>A simple and accessible learning tool for testing HTTP operations</em>
 				</div>
-				<div role="complimentary">
+				<div role="complementary">
 					<ThemeForm theme={theme} changeTheme={setTheme} />
 				</div>
 			</header>

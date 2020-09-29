@@ -5,7 +5,7 @@ import "./RequestForm.css";
 const methods = ["GET", "POST", "PUT", "DELETE"];
 
 export default function RequestForm() {
-	const {setReqUrl, setReqMethod, setReqHeaders, setReqBody, send } = useContext(RequestContext);
+	const {send } = useContext(RequestContext);
 	const [fields, setFields] = useState({
 		reqMethod: "GET",
 		url: "",
@@ -22,30 +22,7 @@ export default function RequestForm() {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		setError("");
-		setReqMethod(fields.reqMethod);
-		setReqUrl(fields.url);
-		
-		if (fields.headers) {
-			try {
-				const headers = JSON.parse(fields.headers);
-				setReqHeaders(headers);
-			} catch (err) {
-				setError(err);
-			}
-		}
-		
-		if (fields.body) {
-			try {
-				const body = JSON.parse(fields.body);
-				setReqBody(body);
-			} catch (err) {
-				setError(err);
-			}
-		}
-		
-		if (!error) {
-			send();
-		}
+		send(fields, setError);
 	};
 	
 	return (
