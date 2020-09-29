@@ -38,7 +38,7 @@ export function RequestContextProvider(props) {
 				url: reqData.url
 			}
 		};
-		axios.post("/", req, config).then(res => {
+		axios.post("/api", req, config).then(res => {
 			console.dir(res);
 			updateResponse(res.data);
 		}).catch(err => {
