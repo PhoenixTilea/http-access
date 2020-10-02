@@ -5,7 +5,7 @@ const path = require("path");
 const app = express();
 app.use(morgan("dev"));
 app.use(express.json());
-app.use(express.static(path.resolve(__dirname, 'client', 'build')))
+app.use(express.static(path.resolve(__dirname, "client", "build")));
 
 // Decode incoming url query parameter
 app.use((req, res, next) => {
@@ -18,8 +18,8 @@ app.use((req, res, next) => {
 	}
 });
 app.use("/api", require("./routes/reqRouter"));
-app.get('/*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+app.get("/*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
 })
 
 // Handle errors
