@@ -6,6 +6,10 @@ body {
 	margin: 0;
 }
 
+#app {
+	min-height: 100vh;
+}
+
 h1, h3 {
 	margin-bottom: 0;
 }
@@ -17,9 +21,10 @@ h1, h3 {
 header {
 	padding: 0 5%;
 	display: grid;
-	grid-template-columns: 45% 20em;
+	grid-template-columns: 45% 30em;
 	justify-content: space-between;
 	margin-bottom: 2em;
+	border-bottom: 2px outset;
 }
 
 main {
@@ -28,7 +33,24 @@ main {
 	justify-content: space-around;
 }
 
+input:focus, textarea:focus, select:focus {
+	outline: 2px solid;
+}
+
 textarea {
 	width: 35vw;
 	height: 20vh;
+}
+
+input:read-only, textarea:read-only {
+	background: transparent;
+}
+
+button {
+	border: 2px outset;
+	border-radius: 25%;
+	padding: 1em;
+}
+button:active {
+	border-style: inset;
 }

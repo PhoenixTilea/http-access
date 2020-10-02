@@ -1,28 +1,22 @@
 import React, { useState } from "react";
-
-const themes = ["dark", "light"];
+import { themes } from "../data.json";
 
 export default function ThemeForm(props) {
 	const [selected, setSelected] = useState(props.theme);
 	
 	const handleChange = (e) => {
 		setSelected(e.target.value);
-	};
-	
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		props.changeTheme(selected);
+		props.changeTheme(e.target.value);
 	};
 	
 	return (
-		<form onSubmit={handleSubmit}>
+		<form>
 			<label>
 				<h3>Select Theme</h3>
 				<select value={selected} onChange={handleChange}>
-					{themes.map(t => <option key={t} value={t}>{`${t} theme`}</option>)}
+					{themes.map(t => <option key={t.class} value={t.class}>{t.name}</option>)}
 				</select>
 			</label>
-			<button>Change</button>
 		</form>
 	);
 }

@@ -1,0 +1,20 @@
+{
+	"themes" : [
+		{
+			"name" : "Dark Theme",
+			"class" : "dark-theme"
+		},
+		{
+			"name" : "Light Theme",
+			"class" : "light-theme"
+		},
+		{
+			"name" : "High Contrast Dark Theme",
+			"class" : "hc-dark-theme"
+		},
+		{
+			"name" : "High Contrast Light Theme",
+			"class" : "hc-light-theme"
+		}
+	]
+}

@@ -1,0 +1,87 @@
+/* ==========
+// Dark Theme
+// ========== */
+
+.dark-theme {
+	background-color: #222222;
+	color: #eeeeee;
+}
+.dark-theme * {
+	border-color: #eeeeee;
+	outline-color: #eeeeee;
+}
+.dark-theme input, .dark-theme textarea, .dark-theme select {
+	background-color: #111111;
+}
+.dark-theme button {
+	background-color: #111111;
+}
+.dark-theme button:hover {
+	background-color: #333333;
+}
+
+/* ==========
+// Light Theme
+// ========== */
+
+.light-theme {
+	background-color: #bbbbbb;
+	color: #222222;
+}
+.light-theme * {
+	border-color: #222222;
+	outline-color: #222222;
+}
+.light-theme input, .light-theme textarea, .light-theme select {
+	background-color: #eeeeee;
+}
+.light-theme button {
+	background-color: #eeeeee;
+}
+.dark-theme button:hover {
+	background-color: #aaaaaa;
+}
+
+/* ==========
+// High Contrast Dark Theme
+// ========== */
+
+.hc-dark-theme {
+	background-color: black;
+	color: white;
+}
+.hc-dark-theme * {
+	border-color: white;
+	outline-color: white;
+}
+.hc-dark-theme input, .hc-dark-theme textarea, .hc-dark-theme select {
+	background-color: #001100;
+}
+.hc-dark-theme button {
+	background-color: darkgreen;
+}
+.hc-dark-theme button:hover {
+	background-color: black;
+}
+
+/* ==========
+// High Contrast Light Theme
+// ========== */
+
+.hc-light-theme {
+	background-color: white;
+	color: black;
+}
+.hc-light-theme * {
+	border-color: black;
+	outline-color: black;
+}
+.hc-light-theme input, .hc-light-theme textarea, .hc-light-theme select {
+	background-color: #dddddd;
+}
+.hc-light-theme button {
+	background-color: #dddddd;
+}
+.hc-light-theme button:hover {
+	background-color: white;
+}
