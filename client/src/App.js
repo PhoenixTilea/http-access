@@ -12,7 +12,7 @@ export default function App() {
 		<RequestContextProvider><div id="app" className={theme}>
 			<header>
 				<div>
-					<h1>HTTP Acess</h1>
+					<h1>HTTP Access</h1>
 					<em>A simple and accessible learning tool for testing HTTP operations</em>
 				</div>
 				<div role="complementary">
