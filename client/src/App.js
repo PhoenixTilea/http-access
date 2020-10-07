@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import RequestForm from "./components/RequestForm";
 import ResponseDisplay from "./components/ResponseDisplay";
+import Footer from "./components/Footer";
 import { RequestContextProvider } from "./RequestContext";
 import ThemeForm from "./components/ThemeForm";
 import "./themes.css";
@@ -23,6 +24,7 @@ export default function App() {
 				<RequestForm />
 				<ResponseDisplay />
 			</main>
+			<Footer />
 		</div></RequestContextProvider>
 	);
 }
