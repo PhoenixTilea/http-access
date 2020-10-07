@@ -12,6 +12,7 @@
 }
 .dark-theme input, .dark-theme textarea, .dark-theme select {
 	background-color: #111111;
+	color: #eeeeee;
 }
 .dark-theme button {
 	background-color: #111111;
@@ -56,6 +57,7 @@
 }
 .hc-dark-theme input, .hc-dark-theme textarea, .hc-dark-theme select {
 	background-color: #001100;
+	color: white;
 }
 .hc-dark-theme button {
 	background-color: darkgreen;
