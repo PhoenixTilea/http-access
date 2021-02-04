@@ -1,17 +1,18 @@
 import React, { useContext, useState } from "react";
 import { RequestContext } from "../RequestContext";
+import { methods } from "../data.json";
 import "./RequestForm.css";
 
-const methods = ["GET", "POST", "PUT", "DELETE"];
+const initRequest = {
+	reqMethod: methods[0],
+	url: "",
+	headers: "",
+	body: ""
+}
 
 export default function RequestForm() {
 	const {send } = useContext(RequestContext);
-	const [fields, setFields] = useState({
-		reqMethod: "GET",
-		url: "",
-		headers: "",
-		body: ""
-	});
+	const [fields, setFields] = useState(initRequest);
 	const [error, setError] = useState("");
 	
 	const handleChange = (e) => {
@@ -19,7 +20,7 @@ export default function RequestForm() {
 		setFields(prevFields => ({...prevFields, [name]: value}));
 	};
 	
-	const handleSubmit = (e) => {
+	const handleSubmit = e => {
 		e.preventDefault();
 		setError("");
 		send(fields, setError);
@@ -32,7 +33,7 @@ export default function RequestForm() {
 				<div id="main-request">
 					<label>
 						<h3>Method</h3>
-						<select name="reqMethod" value={fields.method} onChange={handleChange}>
+						<select name="reqMethod" value={fields.reqMethod} onChange={handleChange}>
 							{methods.map(m => <option key={m} value={m}>{m}</option>)}
 						</select>
 					</label>

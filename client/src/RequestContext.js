@@ -2,15 +2,14 @@ import React, { useState } from "react";
 import axios from "axios";
 import jsonFormat from "json-format";
 
-export const RequestContext = React.createContext();
-
-export function RequestContextProvider(props) {
-	const initResponse = {
+const RequestContext = React.createContext();
+const initResponse = {
 		status: "",
 		statusText: "",
 		headers: "",
 		body: ""
 	};
+const RequestProvider = ({children}) => {
 	const [response, setResponse] = useState(initResponse);
 	
 	const send = (reqData, setError) => {
@@ -46,13 +45,15 @@ export function RequestContextProvider(props) {
 				updateResponse(err.response.data);
 			} else if (err.request) {
 				console.error(err.request);
+				setError(`Error with the request: ${err.message}`);
 			} else {
 				console.error(err.message);
+				setError(err.message);
 			}
 		});
 	};
 	
-	const updateResponse = (res) => {
+	const updateResponse = res => {
 		setResponse({
 			status: res.status,
 			statusText: res.statusText,
@@ -60,10 +61,12 @@ export function RequestContextProvider(props) {
 			body: jsonFormat(res.data || {}, {type: "space"})
 		});
 	};
-	const value = {send, response};
+	
 	return (
-		<RequestContext.Provider value={value}>
-			{props.children}
+		<RequestContext.Provider value={{send, response}}>
+			{children}
 		</RequestContext.Provider>
 	);
 }
+
+export { RequestContext, RequestProvider };

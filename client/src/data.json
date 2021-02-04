@@ -16,5 +16,12 @@
 			"name" : "High Contrast Light Theme",
 			"class" : "hc-light-theme"
 		}
+	],
+	"methods": [
+		"GET",
+		"POST",
+		"PUT",
+		"PATCH",
+		"DELETE"
 	]
 }

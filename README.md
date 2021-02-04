@@ -1,16 +1,16 @@
 # HTTP Access
 
-this is a simple app meant for testing HTTP operations while developing. It is currently very basic, most useful to students learning HTTP and developing simple CRUD applications.
+This is a simple REST client meant for testing HTTP/S endpoints with JSON payloads.
 
 Most importantly, it is accessible to screen reader users, unlike Postman or Hoppscotch.io (at the present time).
 
 ## Usage
 
-This app is very much a work in progress, but can be used to make JSON GET, POST, PUT, and DELETE requests. If you are testing a server/API hosted on the web, this app should work online. 
+This app is very much a work in progress, but can be used to make JSON GET, POST, PUT, PATCH, and DELETE requests. If you are testing a server/API hosted on the web, this app should work online. 
 
 ### Online (Remote Servers/APIs Only)
 
-Visit [HTTP Access](https://http-access.herokuapp.com) to use this app remotely. Simply choose your request method, enter your endpoint and any body or header information you might need, and click "Send". The status code/text, response body, and response headers will show up under the "Response" section (on the right if you can see, after the request fields if you can't).
+Visit [HTTP Access](https://http-access.herokuapp.com) to use this app remotely. Simply choose your request method, enter your endpoint and any body and/or header information you might need, and click "Send". The status code/text, response body, and response headers will show up under the "Response" section (on the right if you can see, after the request fields if you can't).
 
 **NOTE:** Remember, the request body/headers must be valid JSON. This app doesn't support anything else at present.
 

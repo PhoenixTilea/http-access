@@ -16,6 +16,7 @@ reqRouter.post("/", (req, res, next) => {
 		break;
 		case "post":
 		case "put":
+		case "patch":
 			request = axios[method](endpoint, body, {headers});
 		break;
 		default:
@@ -31,13 +32,12 @@ reqRouter.post("/", (req, res, next) => {
 			const {status, statusText, headers, data} = err.response;
 			return res.send({status, statusText, headers, data});
 		} else if (err.request) {
-			res.status(404);
+			res.status(400);
 		return next(new Error(`There was a problem with the request: ${err.message}`));
 		}
 		res.status(500);
 		return next(err);
 	});
 });
-
 
 module.exports = reqRouter;

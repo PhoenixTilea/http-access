@@ -13,14 +13,14 @@ app.use((req, res, next) => {
 		req.query.url = decodeURI(req.query.url);
 		return next();
 	} catch (err) {
-		res.status(500);
+		res.status(400);
 		return next(err);
 	}
 });
 app.use("/api", require("./routes/reqRouter"));
 app.get("/*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-})
+});
 
 // Handle errors
 app.use((err, req, res, next) => {

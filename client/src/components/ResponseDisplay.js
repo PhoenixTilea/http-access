@@ -13,9 +13,10 @@ export default function ResponseDisplay() {
 				<input 
 					type="text" 
 					value={response.status ? `${response.status} - ${response.statusText}` : ""} 
-					readOnly={true} 
-					aria-readonly={true} 
-					aria-live="polite" 
+					readOnly 
+					aria-readonly="true" 
+					aria-live="polite"
+					aria-atomic="true"
 				/>
 			</label>
 			<label className="block">
