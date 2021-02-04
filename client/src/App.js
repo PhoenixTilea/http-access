@@ -1,13 +1,32 @@
 import React, { useState } from "react";
+import Dialog from "@reach/dialog";
+import { RequestProvider } from "./RequestContext";
 import RequestForm from "./components/RequestForm";
 import ResponseDisplay from "./components/ResponseDisplay";
 import Footer from "./components/Footer";
-import { RequestProvider } from "./RequestContext";
+import SaveForm from "./components/SaveForm";
 import ThemeForm from "./components/ThemeForm";
 import "./themes.css";
 
 export default function App() {
 	const [theme, setTheme] = useState("dark-theme");
+	const [showDialog, setShowDialog] = useState(false);
+	const [storedData, setStoredData] = useState(JSON.parse(localStorage.getItem("savedRequests") || "[]"));
+	const [reqId, setReqId] = useState("");
+	const [saveData, setSaveData] = useState({});
+	
+	const openDialog = data => {
+		setSaveData(data);
+		setShowDialog(true);
+	};
+	
+	const closedialog = () => {
+		setShowDialog(false);
+	};
+	
+	const loadData = id => {
+		setReqId(id);
+	};
 	
 	return (
 		<RequestProvider>
@@ -22,10 +41,13 @@ export default function App() {
 				</div>
 			</header>
 			<main>
-				<RequestForm />
+				<RequestForm reqId={reqId} loadData={loadData} />
 				<ResponseDisplay />
 			</main>
 			<Footer />
+			<Dialog isOpen={showDialog} onDismiss={closeDialog}>
+				<SaveForm request={data} dismiss={closeDialog} />
+			</Dialog>
 		</div>
 		</RequestProvider>
 	);
